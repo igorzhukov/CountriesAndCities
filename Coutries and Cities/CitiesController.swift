@@ -18,7 +18,7 @@ class CitiesController: UITableViewController, UIPickerViewDelegate, UIPickerVie
     var userDidSelectCountry = false
     var selectedCountry: String?
     
-    
+    var a: String?
     
     var countries = [Country]()
     
