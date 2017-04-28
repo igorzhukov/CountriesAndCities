@@ -2,7 +2,7 @@
 //  Country+CoreDataProperties.swift
 //  Coutries and Cities
 //
-//  Created by Igor Zhukov on 4/27/17.
+//  Created by Igor Zhukov on 4/28/17.
 //  Copyright © 2017 Igor Zhukov. All rights reserved.
 //
 

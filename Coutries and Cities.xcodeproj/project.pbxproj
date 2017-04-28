@@ -16,6 +16,7 @@
 		424B7EAA1EB1084200E67BBB /* CoutriesAndCities.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 424B7EA81EB1084200E67BBB /* CoutriesAndCities.xcdatamodeld */; };
 		424B7EAD1EB113D500E67BBB /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B7EAB1EB113D500E67BBB /* Country+CoreDataClass.swift */; };
 		424B7EAE1EB113D500E67BBB /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B7EAC1EB113D500E67BBB /* Country+CoreDataProperties.swift */; };
+		424B7ECE1EB34DA800E67BBB /* CountriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B7ECD1EB34DA800E67BBB /* CountriesController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		424B7EA91EB1084200E67BBB /* CoutriesAndCities.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoutriesAndCities.xcdatamodel; sourceTree = "<group>"; };
 		424B7EAB1EB113D500E67BBB /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataClass.swift"; sourceTree = "<group>"; };
 		424B7EAC1EB113D500E67BBB /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		424B7ECD1EB34DA800E67BBB /* CountriesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountriesController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,13 +66,14 @@
 			children = (
 				424B7EAB1EB113D500E67BBB /* Country+CoreDataClass.swift */,
 				424B7EAC1EB113D500E67BBB /* Country+CoreDataProperties.swift */,
-				424B7E941EB100B100E67BBB /* AppDelegate.swift */,
+				424B7ECD1EB34DA800E67BBB /* CountriesController.swift */,
 				424B7E961EB100B100E67BBB /* CitiesController.swift */,
 				424B7E981EB100B100E67BBB /* Main.storyboard */,
 				424B7EA81EB1084200E67BBB /* CoutriesAndCities.xcdatamodeld */,
 				424B7E9B1EB100B100E67BBB /* Assets.xcassets */,
 				424B7E9D1EB100B100E67BBB /* LaunchScreen.storyboard */,
 				424B7EA01EB100B100E67BBB /* Info.plist */,
+				424B7E941EB100B100E67BBB /* AppDelegate.swift */,
 				424B7EA61EB100FF00E67BBB /* SwiftyJSON.swift */,
 			);
 			path = "Coutries and Cities";
@@ -149,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				424B7EA71EB100FF00E67BBB /* SwiftyJSON.swift in Sources */,
+				424B7ECE1EB34DA800E67BBB /* CountriesController.swift in Sources */,
 				424B7E971EB100B100E67BBB /* CitiesController.swift in Sources */,
 				424B7EAE1EB113D500E67BBB /* Country+CoreDataProperties.swift in Sources */,
 				424B7E951EB100B100E67BBB /* AppDelegate.swift in Sources */,
