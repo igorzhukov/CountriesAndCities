@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		424B7E951EB100B100E67BBB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B7E941EB100B100E67BBB /* AppDelegate.swift */; };
-		424B7E971EB100B100E67BBB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B7E961EB100B100E67BBB /* ViewController.swift */; };
+		424B7E971EB100B100E67BBB /* CitiesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B7E961EB100B100E67BBB /* CitiesController.swift */; };
 		424B7E9A1EB100B100E67BBB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 424B7E981EB100B100E67BBB /* Main.storyboard */; };
 		424B7E9C1EB100B100E67BBB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 424B7E9B1EB100B100E67BBB /* Assets.xcassets */; };
 		424B7E9F1EB100B100E67BBB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 424B7E9D1EB100B100E67BBB /* LaunchScreen.storyboard */; };
+		424B7EA71EB100FF00E67BBB /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B7EA61EB100FF00E67BBB /* SwiftyJSON.swift */; };
+		424B7EAA1EB1084200E67BBB /* CoutriesAndCities.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 424B7EA81EB1084200E67BBB /* CoutriesAndCities.xcdatamodeld */; };
+		424B7EAD1EB113D500E67BBB /* Country+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B7EAB1EB113D500E67BBB /* Country+CoreDataClass.swift */; };
+		424B7EAE1EB113D500E67BBB /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 424B7EAC1EB113D500E67BBB /* Country+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		424B7E911EB100B100E67BBB /* Coutries and Cities.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Coutries and Cities.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		424B7E941EB100B100E67BBB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		424B7E961EB100B100E67BBB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		424B7E961EB100B100E67BBB /* CitiesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesController.swift; sourceTree = "<group>"; };
 		424B7E991EB100B100E67BBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		424B7E9B1EB100B100E67BBB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		424B7E9E1EB100B100E67BBB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		424B7EA01EB100B100E67BBB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		424B7EA61EB100FF00E67BBB /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		424B7EA91EB1084200E67BBB /* CoutriesAndCities.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoutriesAndCities.xcdatamodel; sourceTree = "<group>"; };
+		424B7EAB1EB113D500E67BBB /* Country+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataClass.swift"; sourceTree = "<group>"; };
+		424B7EAC1EB113D500E67BBB /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +62,16 @@
 		424B7E931EB100B100E67BBB /* Coutries and Cities */ = {
 			isa = PBXGroup;
 			children = (
+				424B7EAB1EB113D500E67BBB /* Country+CoreDataClass.swift */,
+				424B7EAC1EB113D500E67BBB /* Country+CoreDataProperties.swift */,
 				424B7E941EB100B100E67BBB /* AppDelegate.swift */,
-				424B7E961EB100B100E67BBB /* ViewController.swift */,
+				424B7E961EB100B100E67BBB /* CitiesController.swift */,
 				424B7E981EB100B100E67BBB /* Main.storyboard */,
+				424B7EA81EB1084200E67BBB /* CoutriesAndCities.xcdatamodeld */,
 				424B7E9B1EB100B100E67BBB /* Assets.xcassets */,
 				424B7E9D1EB100B100E67BBB /* LaunchScreen.storyboard */,
 				424B7EA01EB100B100E67BBB /* Info.plist */,
+				424B7EA61EB100FF00E67BBB /* SwiftyJSON.swift */,
 			);
 			path = "Coutries and Cities";
 			sourceTree = "<group>";
@@ -136,8 +148,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				424B7E971EB100B100E67BBB /* ViewController.swift in Sources */,
+				424B7EA71EB100FF00E67BBB /* SwiftyJSON.swift in Sources */,
+				424B7E971EB100B100E67BBB /* CitiesController.swift in Sources */,
+				424B7EAE1EB113D500E67BBB /* Country+CoreDataProperties.swift in Sources */,
 				424B7E951EB100B100E67BBB /* AppDelegate.swift in Sources */,
+				424B7EAD1EB113D500E67BBB /* Country+CoreDataClass.swift in Sources */,
+				424B7EAA1EB1084200E67BBB /* CoutriesAndCities.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,8 +317,22 @@
 				424B7EA51EB100B100E67BBB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		424B7EA81EB1084200E67BBB /* CoutriesAndCities.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				424B7EA91EB1084200E67BBB /* CoutriesAndCities.xcdatamodel */,
+			);
+			currentVersion = 424B7EA91EB1084200E67BBB /* CoutriesAndCities.xcdatamodel */;
+			path = CoutriesAndCities.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 424B7E891EB100B100E67BBB /* Project object */;
 }
