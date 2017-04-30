@@ -47,7 +47,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hb9-E9-aKt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2496.8000000000002" y="-377.36131934032989"/>
+            <point key="canvasLocation" x="2492" y="-250"/>
         </scene>
         <!--Countries Controller-->
         <scene sceneID="IYJ-2E-VDx">
@@ -67,6 +67,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jOK-wQ-U5K">
                                 <rect key="frame" x="164" y="491.5" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="OAW-4u-u88" kind="show" identifier="Seguea" id="Zjd-6x-9h9"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -110,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fkr-RA-qMT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3647.1999999999998" y="8.5457271364317844"/>
+            <point key="canvasLocation" x="3401" y="-250"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="YtO-j2-pOO">
