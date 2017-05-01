@@ -7,44 +7,31 @@
 //
 
 import UIKit
-import CoreData
+
 
 class CitiesController: UITableViewController {
     
     
-    var countryName = ""
     var countryCities = ""
     private var arrayOfCities = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        print(countryName)
-        print(countryCities)
         createCitiesListForTableView(fromString: countryCities)
-        // TODO:
-        
-        
-
     }
     
+    
     private func createCitiesListForTableView(fromString: String) {
-        // MARK: - remove first characters "["
+        // remove first character "["
         countryCities.remove(at: countryCities.startIndex)
-        print(countryCities)
         
-        
-        // MARK: - remove last characters "]"
+        // remove last character "]"
         countryCities = String(countryCities.characters.dropLast())
-        print(countryCities)
-        
-        
-        // MARK: - create array
+
+        // create and sort array
         arrayOfCities = countryCities.components(separatedBy: ", ")
-        for city in arrayOfCities {
-            print(city)
-        }
+        arrayOfCities.sort()
+        
     }
     
        
@@ -54,17 +41,22 @@ class CitiesController: UITableViewController {
     
     // MARK: - TableView configuring
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return arrayOfCities.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "City", for: indexPath)
-        
-      
-        
+        cell.textLabel?.text = arrayOfCities[indexPath.row]
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = CityInfoController()
+        let indexPath = tableView.indexPathForSelectedRow //optional, to get from any UIButton for example
+        let currentCell = tableView.cellForRow(at: indexPath!)!
+        vc.selectedCityName =  currentCell.textLabel!.text!
+        navigationController?.pushViewController(vc, animated: true)
     }
     
 }

@@ -21,7 +21,8 @@ class CountriesController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     
     var countries = [Country]()
-    var countryName = ""
+    
+    // variable to send CitiesController
     var countryCities = ""
     
     
@@ -37,7 +38,7 @@ class CountriesController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         container = NSPersistentContainer(name: "CoutriesAndCities")
         container.loadPersistentStores { storeDescription, error in
             // instructs CoreData to allow updates to objects if object update is available
-            // self.container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+            self.container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
             
             if let error = error {
                 print("Unresolved error \(error)")
@@ -46,16 +47,9 @@ class CountriesController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         
         performSelector(inBackground: #selector(fetchCountries), with: nil)
         loadSavedData()
-//        
-//        for i in countries {
-//            print(i.countryName)
-//            print(i.listOfCities)
-//        }
-//        print(countries[0].listOfCities)
-        
+        self.pickerView.reloadAllComponents()
     }
     
-//    func createPersistentContainer()
     
     func fetchCountries() {
         if let data = try? Data(contentsOf: URL(string: "https://raw.githubusercontent.com/David-Haim/CountriesToCitiesJSON/master/countriesToCities.json")!) {
@@ -75,6 +69,7 @@ class CountriesController: UIViewController, UIPickerViewDelegate, UIPickerViewD
                 // saving to CoreData conifgured object of CoreData entity type
                 self.saveContext()
                 self.loadSavedData()
+                self.pickerView.reloadAllComponents()
             }
         }
     }
@@ -82,14 +77,11 @@ class CountriesController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     // MARK: - json parsing and assigning to object of CoreData entity type
     func configure(country: Country, usingJSON json: (key: String, value: JSON)) {
         country.countryName = json.key
-        // ??? TODO: - do I need arrayValue ???
         country.listOfCities = String(describing: json.value.arrayValue)
     }
     
     // MARK: - save changes if a change is available
     // saveContext() should be called whenever changes are made that should be saved to disk
-
-    
     func saveContext() {
         if container.viewContext.hasChanges {
             do {
@@ -104,8 +96,8 @@ class CountriesController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     func loadSavedData() {
         
         let request = Country.countryFetchRequest()
-//        let sort = NSSortDescriptor(key: "countryName", ascending: false)
-//        request.sortDescriptors = [sort]
+        let sort = NSSortDescriptor(key: "countryName", ascending: false)
+        request.sortDescriptors = [sort]
         
         do {
             countries = try container.viewContext.fetch(request)
@@ -140,16 +132,17 @@ class CountriesController: UIViewController, UIPickerViewDelegate, UIPickerViewD
         let country = countries[row]
         self.title = country.countryName
         
-        countryName = country.countryName
+        //countryName = country.countryName
         countryCities = country.listOfCities
         
     }
     
+    // MARK: - Seque
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Seguea" {
-            if let destination = segue.destination as? CitiesController {
-                destination.countryName = self.countryName
-                destination.countryCities = self.countryCities
+        if segue.identifier == "SegueToListOfCities" {
+            if let citiesController = segue.destination as? CitiesController {
+                //citiesController.countryName = self.countryName
+                citiesController.countryCities = self.countryCities
             }
           
         }
