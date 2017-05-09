@@ -34,7 +34,6 @@ class CityInfoController: UIViewController {
     
     func createURL() {
         url = URL(string:"http://api.geonames.org/wikipediaSearchJSON?q=\(selectedCityName)&maxRows=10&username=djangofreeqa")
-        print(url ?? "url is nil")
     }
     
     
@@ -42,16 +41,14 @@ class CityInfoController: UIViewController {
     func fetchCityInfo() {
         if let data = try? Data(contentsOf: url!) {
             let json = JSON(data: data)
-            // convert json to dictionary
+            // convert json to json array
             let jsonArray = json["geonames"].arrayValue
-            print(jsonArray)
-            
+            // assign value to city info depending on array filling
             if !(jsonArray.isEmpty) {
                 cityInfo = jsonArray[0]["summary"].stringValue
             } else {
                 cityInfo = "Sorry, but we don't find any information about your city, try any another city"
             }
-            
             DispatchQueue.main.async { [unowned self] in
                 self.configureHTML()
             }
