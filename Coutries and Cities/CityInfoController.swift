@@ -44,7 +44,14 @@ class CityInfoController: UIViewController {
             let json = JSON(data: data)
             // convert json to dictionary
             let jsonArray = json["geonames"].arrayValue
-            cityInfo = jsonArray[0]["summary"].stringValue
+            print(jsonArray)
+            
+            if !(jsonArray.isEmpty) {
+                cityInfo = jsonArray[0]["summary"].stringValue
+            } else {
+                cityInfo = "Sorry, but we don't find any information about your city, try any another city"
+            }
+            
             DispatchQueue.main.async { [unowned self] in
                 self.configureHTML()
             }
