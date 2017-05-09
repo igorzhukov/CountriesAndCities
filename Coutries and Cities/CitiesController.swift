@@ -55,7 +55,9 @@ class CitiesController: UITableViewController {
         let vc = CityInfoController()
         let indexPath = tableView.indexPathForSelectedRow //optional, to get from any UIButton for example
         let currentCell = tableView.cellForRow(at: indexPath!)!
-        vc.selectedCityName =  currentCell.textLabel!.text!
+        let selectedCityNameWithSpaces = currentCell.textLabel!.text!
+        // remove spaces from selectedCityNameWithSpaces before passing to CityInfoController().selectedCityName
+        vc.selectedCityName = selectedCityNameWithSpaces.components(separatedBy: .whitespaces).joined()
         navigationController?.pushViewController(vc, animated: true)
     }
     

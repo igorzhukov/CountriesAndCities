@@ -3,6 +3,11 @@
     <entity name="Country" representedClassName="Country" syncable="YES">
         <attribute name="countryName" attributeType="String" syncable="YES"/>
         <attribute name="listOfCities" attributeType="String" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="countryName"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
         <element name="Country" positionX="-63" positionY="-18" width="128" height="75"/>

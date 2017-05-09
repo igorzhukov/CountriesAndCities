@@ -31,8 +31,10 @@ class CityInfoController: UIViewController {
     }
     
     
+    
     func createURL() {
         url = URL(string:"http://api.geonames.org/wikipediaSearchJSON?q=\(selectedCityName)&maxRows=10&username=djangofreeqa")
+        print(url ?? "url is nil")
     }
     
     
@@ -45,7 +47,6 @@ class CityInfoController: UIViewController {
             cityInfo = jsonArray[0]["summary"].stringValue
             DispatchQueue.main.async { [unowned self] in
                 self.configureHTML()
-                
             }
         }
     }

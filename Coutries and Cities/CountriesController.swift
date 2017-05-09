@@ -56,9 +56,6 @@ class CountriesController: UIViewController, UIPickerViewDelegate, UIPickerViewD
             let jsonCountries = JSON(data: data)
             // convert json to dictionary
             let jsonCountriesDictionary = jsonCountries.dictionaryValue
-            
-            // let keysArray = Array(jsonCountriesDictionary.keys)
-            
             print("Received \(jsonCountriesDictionary.count) new countries.")
             
             DispatchQueue.main.async { [unowned self] in
@@ -76,7 +73,8 @@ class CountriesController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     
     // MARK: - json parsing and assigning to object of CoreData entity type
     func configure(country: Country, usingJSON json: (key: String, value: JSON)) {
-        country.countryName = json.key
+        if json.key != "" { country.countryName = json.key }
+        else { country.countryName = "Unknown Country" }
         country.listOfCities = String(describing: json.value.arrayValue)
     }
     
@@ -96,7 +94,7 @@ class CountriesController: UIViewController, UIPickerViewDelegate, UIPickerViewD
     func loadSavedData() {
         
         let request = Country.countryFetchRequest()
-        let sort = NSSortDescriptor(key: "countryName", ascending: false)
+        let sort = NSSortDescriptor(key: "countryName", ascending: true)
         request.sortDescriptors = [sort]
         
         do {
